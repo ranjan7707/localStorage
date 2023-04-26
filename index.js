@@ -17,7 +17,10 @@ submitBtn.addEventListener('click', (event) => {
     email
   };
 
-  // Store the user data directly in the local storage with a unique key
-  localStorage.setItem('userDataName', userData.name);
-  localStorage.setItem('userDataEmail', userData.email);
+  // Generate a unique key based on the current timestamp
+  const key = Date.now().toString();
+
+  // Store the user data in localStorage with the unique key
+  localStorage.setItem(`userData_${key}_name`, userData.name);
+  localStorage.setItem(`userData_${key}_email`, userData.email);
 });
